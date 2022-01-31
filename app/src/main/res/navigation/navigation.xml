@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/authorization">
+
+    <fragment
+        android:id="@+id/authorization"
+        android:name="com.example.testfinaluri.fragmentAuthorization"
+        android:label="activity_main3"
+        tools:layout="@layout/activity_main3" >
+        <action
+            android:id="@+id/action_authorization_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_authorization_to_fragmentPasswordRecovery"
+            app:destination="@id/fragmentPasswordRecovery" />
+        <action
+            android:id="@+id/action_authorization_to_fragmentRegistration"
+            app:destination="@id/fragmentRegistration" />
+    </fragment>
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.testfinaluri.Home"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" >
+        <action
+            android:id="@+id/action_home_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/save"
+        android:name="com.example.testfinaluri.Save"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" >
+        <action
+            android:id="@+id/action_save_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.testfinaluri.SecondFragment"
+        android:label="SecondFragment"
+        tools:layout="@layout/second_fragment">
+        <argument
+            android:name="imageUrl"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userTitle"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userModel"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userYear"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userMileage"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userBodyType"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userEngineType"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userEngineVol"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userColor"
+            app:argType="string"
+            android:defaultValue="  " />
+        <action
+            android:id="@+id/action_secondFragment_to_save"
+            app:destination="@id/save" />
+        <action
+            android:id="@+id/action_secondFragment_to_home"
+            app:destination="@id/home" />
+        <argument android:name="secondUrlImage"
+            app:argType="string"
+            android:defaultValue="  " />
+        <argument
+            android:name="userDrive"
+            app:argType="string"
+            android:defaultValue="  " />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRegistration"
+        android:name="com.example.testfinaluri.fragmentRegistration"
+        android:label="fragmentRegistration" >
+        <action
+            android:id="@+id/action_fragmentRegistration_to_authorization"
+            app:destination="@id/authorization" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPasswordRecovery"
+        android:name="com.example.testfinaluri.fragmentPasswordRecovery"
+        android:label="fragmentPasswordRecovery" >
+        <action
+            android:id="@+id/action_fragmentPasswordRecovery_to_authorization"
+            app:destination="@id/authorization" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.testfinaluri.Profile"
+        android:label="Profile" />
+    <fragment
+        android:id="@+id/password"
+        android:name="com.example.testfinaluri.fragmentChangePassword"
+        android:label="fragmentChangePassword" />
+</navigation>
